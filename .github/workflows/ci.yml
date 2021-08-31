@@ -24,3 +24,4 @@ jobs:
     - run: yarn
     - run: yarn build --if-present
     - run: yarn test
+    - run: yarn deploy
