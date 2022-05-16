@@ -1,6 +1,6 @@
 {
-  "name": "react-github",
-  "version": "0.1.0",
+  "name": "react-mua-pipeline",
+  "version": "0.2.0",
   "private": true,
   "homepage": ".",
   "dependencies": {
@@ -10,7 +10,15 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "@types/jest": "^27.5.1",
+    "@types/node": "^16.11.35",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,8 +45,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages": "^3.2.3"
   }
 }
