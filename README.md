@@ -1,4 +1,4 @@
-# Getting Started with CI/CD of Create React App
+# Deployment ready (React+TS+Vite)
 
 GitHub page should be available here: https://maifeeulasad.github.io/react-pipeline
 
