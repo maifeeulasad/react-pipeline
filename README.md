@@ -19,4 +19,4 @@ GitHub page should be available here: https://maifeeulasad.github.io/react-pipel
    - Give it write access(must)
 
 ## Some stuff:
- - GA included, please change it accordingly, at the very bottom of `index.html`. Here: https://github.com/maifeeulasad/react-pipeline/blob/5e12fd6a332153295a6fd93f4fa257b28070cbb5/public/index.html#L45
+ - GA included, please change it accordingly, at the very bottom of `index.html`. Here: https://github.com/maifeeulasad/react-pipeline/blob/80773182fae66e463d7928f690863bc965757a38/index.html#L35
