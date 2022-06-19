@@ -12,7 +12,7 @@ import Page2 from "./component/Page2";
 import Page3 from "./component/Page3";
 
 
-const App = () => <BrowserRouter>
+const App = () => <BrowserRouter basename="/react-pipeline">
   <Routes>
     <Route path="/" element={<Page1 />} />
     <Route path="/page2" element={<Page2 />} />
