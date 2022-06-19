@@ -20,3 +20,8 @@ GitHub page should be available here: https://maifeeulasad.github.io/react-pipel
 
 ## Some stuff:
  - GA included, please change it accordingly, at the very bottom of `index.html`. Here: https://github.com/maifeeulasad/react-pipeline/blob/80773182fae66e463d7928f690863bc965757a38/index.html#L35
+ - In `App.tsx`, find `<BrowserRouter ...>` and set the project name here, correctly. Currently set to: 
+  ```
+  <BrowserRouter basename="/react-pipeline">
+     ...
+  ```
