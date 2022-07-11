@@ -1,4 +1,4 @@
-name: create-react-app CI/CD
+name: react React+TS+Vite
 
 on:
   push:
