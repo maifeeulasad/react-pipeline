@@ -1,4 +1,4 @@
-# Deployment ready (React+TS+Vite)
+# Deployment ready (React + TS + Vite + Tailwind)
 
 GitHub page should be available here: https://maifeeulasad.github.io/react-pipeline
 
