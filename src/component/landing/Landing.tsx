@@ -8,18 +8,18 @@ import {
 
 import logo from './landing.svg';
 
-const Landing = () => <div className="App">
+const Landing = () => <div>
   <PageHeader
     className="site-page-header"
     title="Title"
     subTitle="This is a subtitle"
     extra={<><Link to="/page2">Page 2</Link><Link to="/page3">Page 3</Link></>}
   />
-<header className="App-header">
-  <img src={logo} className="App-logo" alt="logo" />
-  <p>
+<header>
+  <img src={logo} className="animate-spin h-10" alt="logo" />
+  <div className='text-red-600'>
     React TS + Vite
-  </p>
+  </div>
 </header>
 </div>
 
