@@ -4,7 +4,7 @@ import {
   Link,
 } from "react-router-dom";
 
-import './Landing.css';
+// import './Landing.css';
 
 import logo from './landing.svg';
 
