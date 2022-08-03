@@ -4,9 +4,9 @@ import {
   Link,
 } from "react-router-dom";
 
+import './Landing.css';
 
 import logo from './landing.svg';
-import './Landing.css';
 
 const Landing = () => <div className="App">
   <PageHeader
