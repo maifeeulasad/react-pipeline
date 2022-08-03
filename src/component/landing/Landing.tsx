@@ -17,9 +17,9 @@ const Landing = () => <div className="App">
   />
 <header className="App-header">
   <img src={logo} className="App-logo" alt="logo" />
-  <p>
+  <div className='text-red-600'>
     React TS + Vite
-  </p>
+  </div>
 </header>
 </div>
 
