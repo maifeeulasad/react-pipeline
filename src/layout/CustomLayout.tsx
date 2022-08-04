@@ -1,9 +1,33 @@
 import React from 'react';
 import Layout from 'antd/lib/layout';
 import PageHeader from 'antd/lib/page-header';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;
+
+const CustomHeader = () => {
+  const navigate = useNavigate();
+  return (
+    <PageHeader
+      className="site-page-header h-full"
+      title="React Pipeline"
+      subTitle="SPA using React + TS + Vite + Tailwind"
+      onBack={() => navigate(-1)}
+      extra={
+        <>
+          <Link to="/page2">Page 2</Link>
+          <Link to="/page3">Page 3</Link>
+        </>
+  }
+    />
+  );
+};
+
+const CustomFooter = () => (
+  <div className="text-center">
+    &copy; Maifee Ul Asad
+  </div>
+);
 
 interface ILayoutProps {
   children: any
@@ -17,25 +41,13 @@ class CustomLayout extends React.Component<ILayoutProps> {
     return (
       <Layout>
         <Header style={{ backgroundColor: 'white' }}>
-          <PageHeader
-            className="site-page-header h-full"
-            title="React Pipeline"
-            subTitle="SPA using React + TS + Vite + Tailwind"
-            extra={
-              <>
-                <Link to="/page2">Page 2</Link>
-                <Link to="/page3">Page 3</Link>
-              </>
-            }
-          />
+          <CustomHeader />
         </Header>
         <Content>
           {children}
         </Content>
         <Footer style={{ backgroundColor: 'white' }}>
-          <div className="text-center">
-            &copy; Maifee Ul Asad
-          </div>
+          <CustomFooter />
         </Footer>
       </Layout>
     );
