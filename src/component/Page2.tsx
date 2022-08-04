@@ -1,7 +1,5 @@
 import React from 'react';
 
-function Page2() {
-  return <div>Page 2</div>;
-}
+const Page2 = () => <div>Page 2</div>;
 
 export { Page2 };

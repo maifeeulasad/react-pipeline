@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Page3() {
-  return <div>Page 3</div>;
-}
+const Page3 = () => {
+  const [someState] = useState(3);
+  return <div>Page {someState}</div>;
+};
 
 export { Page3 };
