@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const Page3 = () => <div>Page 3</div>
+const Page3 = () => {
+  const [someState] = useState(3);
+  return <div>Page {someState}</div>;
+};
 
-export default Page3;
+export { Page3 };
