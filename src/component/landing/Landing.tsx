@@ -32,4 +32,4 @@ function Landing() {
   );
 }
 
-export  {Landing};
+export { Landing };
