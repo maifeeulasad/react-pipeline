@@ -67,7 +67,9 @@ class CustomLayout extends React.Component<ILayoutProps> {
           <CustomHeader />
         </Header>
         <Content>
-          {children}
+          <div className="p-6">
+            {children}
+          </div>
         </Content>
         <Footer style={{ backgroundColor: 'white' }}>
           <CustomFooter />
