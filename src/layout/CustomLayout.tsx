@@ -10,7 +10,7 @@ const CustomHeader = () => {
   return (
     <PageHeader
       className="site-page-header h-full"
-      title="React Pipeline"
+      title={<Link to="/">React Pipeline</Link>}
       subTitle="SPA using React + TS + Vite + Tailwind"
       onBack={() => navigate(-1)}
       extra={
