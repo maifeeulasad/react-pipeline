@@ -39,7 +39,7 @@ class CustomLayout extends React.Component<ILayoutProps> {
     const { children } = this.props;
 
     return (
-      <Layout>
+      <Layout style={{ minHeight: '100vh' }}>
         <Header style={{ backgroundColor: 'white' }}>
           <CustomHeader />
         </Header>
