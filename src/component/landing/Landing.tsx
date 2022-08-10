@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import './Landing.css';
+import './Landing.scss';
 
 import logo from './landing.svg';
 
@@ -11,6 +11,9 @@ const Landing = () => (
       <img src={logo} className="animate-spin h-10" alt="logo" />
       <div className="text-red-600">
         React + TS + Vite + Tailwind
+      </div>
+      <div className="sassexample">
+        node-sass is here for styling
       </div>
     </header>
   </div>
