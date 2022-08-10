@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Landing.scss';
+import styles from './Landing.module.scss';
 
 import logo from './landing.svg';
 
@@ -12,7 +12,7 @@ const Landing = () => (
       <div className="text-red-600">
         React + TS + Vite + Tailwind
       </div>
-      <div className="sassexample">
+      <div className={styles.sassExample}>
         node-sass is here for styling
       </div>
     </header>
