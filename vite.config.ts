@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import svgrPlugin from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
 import ViteVisualizer from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
@@ -24,5 +25,6 @@ export default defineConfig({
       filename: './build/report-rollup-plugin-visualizer.html',
       brotliSize: true,
     }),
+    VitePWA(),
   ],
 })
