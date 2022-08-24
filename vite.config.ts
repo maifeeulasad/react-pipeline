@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import svgrPlugin from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
+import ViteVisualizer from "rollup-plugin-visualizer";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -17,6 +18,11 @@ export default defineConfig({
         icon: true,
         // ...svgr options (https://react-svgr.com/docs/options/)
       },
+    }),
+    // last one is the visualizer
+    ViteVisualizer({
+      filename: './build/report-rollup-plugin-visualizer.html',
+      brotliSize: true,
     }),
   ],
 })
