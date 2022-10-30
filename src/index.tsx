@@ -4,6 +4,7 @@ import './index.css';
 import 'antd/dist/antd.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { init } from './pwa-service-worker';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -18,3 +19,4 @@ root.render(
 
 // @ts-ignore
 reportWebVitals();
+init();
