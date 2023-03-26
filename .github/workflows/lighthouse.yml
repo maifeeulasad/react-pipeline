@@ -1,0 +1,27 @@
+name: Lighthouse Report Generation
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 'Installing deps'
+        run: |
+          yarn
+          yarn add -g @lhci/cli@0.9.x
+
+      - name: 'Run'
+        run: yarn start &
+
+      - name: 'Wait ...'
+        run: npx wait-on http://localhost:3000/react-pipeline
+
+      - name: 'Run Lighthouse tests'
+        run: lhci autorun --config=lighthouserc.json
