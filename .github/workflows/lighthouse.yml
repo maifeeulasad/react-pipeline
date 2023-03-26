@@ -24,4 +24,4 @@ jobs:
         run: npx wait-on http://localhost:3000/react-pipeline
 
       - name: 'Run Lighthouse tests'
-        run: lhci autorun --config=lighthouserc.json
+        run: lhci autorun --config=lighthouse-instruction.json
