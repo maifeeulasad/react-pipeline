@@ -30,6 +30,6 @@ jobs:
         with:
           name: lhci-reports
           path: |
-            ./lighthouseci/
+            .lighthouseci/
           # if-no-files-found: error
           # if: ${{ success() && steps.lighthouse.outputs.hasHtmlReport == 'true' && steps.lighthouse.outputs.hasJsonReport == 'true' }}
