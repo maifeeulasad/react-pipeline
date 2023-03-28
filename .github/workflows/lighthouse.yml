@@ -17,10 +17,13 @@ jobs:
       - name: 'Installing deps'
         run: |
           yarn
-          npm i -g @lhci/cli@0.9.x
+          npm i -g @lhci/cli@0.9.x serve
 
-      - name: 'Run Dev Server'
-        run: yarn start &
+      - name: 'Build Prodcution'
+        run: yarn build
+
+      - name: 'Serve Prodcution Server'
+        run: serve -s build &
 
       - name: 'Run Lighthouse tests'
         continue-on-error: true
