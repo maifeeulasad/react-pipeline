@@ -83,4 +83,5 @@ const Page3 = () => {
   );
 };
 
-export { Page3 };
+// eslint-disable-next-line import/no-default-export
+export default Page3;
