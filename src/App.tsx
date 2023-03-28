@@ -7,17 +7,17 @@ import {
 } from 'react-router-dom';
 
 import { CustomLayout } from './layout/CustomLayout';
-import { Landing } from './component/landing/Landing';
-import { Page2 } from './component/Page2';
-import { Page3 } from './component/Page3';
+import { LazyLanding } from './component/landing/LazyLanding';
+import { LazyPage2 } from './component/LazyPage2';
+import { LazyPage3 } from './component/LazyPage3';
 
 const App = () => (
   <BrowserRouter basename="/react-pipeline">
     <CustomLayout>
       <Routes>
-        <Route path="/landing" element={<Landing />} />
-        <Route path="/page2" element={<Page2 />} />
-        <Route path="/page3" element={<Page3 />} />
+        <Route path="/landing" element={<LazyLanding />} />
+        <Route path="/page2" element={<LazyPage2 />} />
+        <Route path="/page3" element={<LazyPage3 />} />
         <Route
           path="*"
           element={<Navigate to="/landing" replace />}
