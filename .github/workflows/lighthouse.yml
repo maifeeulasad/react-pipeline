@@ -1,0 +1,37 @@
+name: Lighthouse Report Generation
+
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: 'Installing deps'
+        run: |
+          yarn
+          npm i -g @lhci/cli@0.9.x
+
+      - name: 'Run Dev Server'
+        run: yarn start &
+
+      - name: 'Run Lighthouse tests'
+        continue-on-error: true
+        run: lhci autorun --config=lighthouse-instruction.json
+
+      - name: 'Upload report'
+        uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: lhci-reports
+          path: |
+            .lighthouseci/
+          # if-no-files-found: error
+          # if: ${{ success() && steps.lighthouse.outputs.hasHtmlReport == 'true' && steps.lighthouse.outputs.hasJsonReport == 'true' }}
