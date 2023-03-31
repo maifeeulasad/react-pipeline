@@ -27,7 +27,7 @@ jobs:
 
       - name: 'Run Lighthouse tests'
         continue-on-error: true
-        run: lhci autorun --config=lighthouse-instruction.json
+        run: lhci autorun
 
       - name: 'Upload report'
         uses: actions/upload-artifact@v2
