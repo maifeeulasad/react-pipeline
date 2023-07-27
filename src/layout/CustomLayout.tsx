@@ -24,8 +24,14 @@ const CustomHeader = () => {
 };
 
 const CustomFooter = () => (
-  <div className="text-center">
-    &copy; Maifee Ul Asad
+  <div style={{ textAlign: 'center' }}>
+    <div>
+      { /* @ts-ignore */}
+      Trace: {__HEAD_COMMIT_HASH__}
+    </div>
+    <div>
+      &copy; {new Date().getFullYear()} - Maifee Ul Asad
+    </div>
   </div>
 );
 
