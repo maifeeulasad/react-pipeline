@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from 'antd/lib/layout';
-import PageHeader from 'antd/lib/page-header';
+import { PageHeader } from '@ant-design/pro-layout';
 import { Link, useNavigate } from 'react-router-dom';
 
 const { Header, Content, Footer } = Layout;
