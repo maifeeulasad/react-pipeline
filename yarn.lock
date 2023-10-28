@@ -4421,6 +4421,11 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
+vite-plugin-radar@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-radar/-/vite-plugin-radar-0.9.1.tgz#1ee8866cb2f2275f3eb56bfe49fea82bbdd673d2"
+  integrity sha512-stnb+LxeEKobcesXW2JA0OdCaBRgR/zZwN6ACXZf1gF9MNR689aiK5UlgTVmrpUnEcPucO9U0M0WHnuM6NXPsA==
+
 vite-plugin-svgr@^2.1.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/vite-plugin-svgr/-/vite-plugin-svgr-2.2.1.tgz#6e1132a3b66f71e1d69e8c5fe989393260184ac3"
