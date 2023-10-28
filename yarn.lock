@@ -463,7 +463,7 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.18.9", "@babel/runtime@^7.7.6", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.10.4", "@babel/runtime@^7.18.9", "@babel/runtime@^7.9.2":
   version "7.18.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.9.tgz#b4fcfce55db3d2e5e080d2490f608a3b9f407f4a"
   integrity sha512-lkqXDcvlFT5rvEjiu6+QYO+1GXrEHRo2LOtS7E4GtX5ESIZOgepqsZBVIj6Pv+a6zqsya9VCgiK1KAK4BvJDAw==
@@ -746,6 +746,11 @@
     rc-motion "^2.0.0"
     rc-resize-observer "^1.3.1"
     rc-util "^5.33.0"
+
+"@remix-run/router@1.10.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.10.0.tgz#e2170dc2049b06e65bbe883adad0e8ddf8291278"
+  integrity sha512-Lm+fYpMfZoEucJ7cMxgt4dYt8jLfbpwRCzAjm9UgSLOkmlqo9gupxt6YX3DY0Fk155NT9l17d/ydi+964uS9Lw==
 
 "@rollup/pluginutils@^4.1.1", "@rollup/pluginutils@^4.2.1":
   version "4.2.1"
@@ -2540,13 +2545,6 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
-history@^5.2.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/history/-/history-5.3.0.tgz#1548abaa245ba47992f063a0783db91ef201c73b"
-  integrity sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==
-  dependencies:
-    "@babel/runtime" "^7.7.6"
-
 ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
@@ -3895,20 +3893,20 @@ react-refresh@^0.13.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.13.0.tgz#cbd01a4482a177a5da8d44c9755ebb1f26d5a1c1"
   integrity sha512-XP8A9BT0CpRBD+NYLLeIhld/RqG9+gktUjW1FkE+Vm7OCinbG1SshcK5tb9ls4kzvjZr9mOQc7HYgBngEyPAXg==
 
-react-router-dom@^6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.3.0.tgz#a0216da813454e521905b5fa55e0e5176123f43d"
-  integrity sha512-uaJj7LKytRxZNQV8+RbzJWnJ8K2nPsOOEuX7aQstlMZKQT0164C+X2w6bnkqU3sjtLvpd5ojrezAyfZ1+0sStw==
+react-router-dom@^6.17.0:
+  version "6.17.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.17.0.tgz#ea73f89186546c1cf72b10fcb7356d874321b2ad"
+  integrity sha512-qWHkkbXQX+6li0COUUPKAUkxjNNqPJuiBd27dVwQGDNsuFBdMbrS6UZ0CLYc4CsbdLYTckn4oB4tGDuPZpPhaQ==
   dependencies:
-    history "^5.2.0"
-    react-router "6.3.0"
+    "@remix-run/router" "1.10.0"
+    react-router "6.17.0"
 
-react-router@6.3.0:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.3.0.tgz#3970cc64b4cb4eae0c1ea5203a80334fdd175557"
-  integrity sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==
+react-router@6.17.0:
+  version "6.17.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.17.0.tgz#7b680c4cefbc425b57537eb9c73bedecbdc67c1e"
+  integrity sha512-YJR3OTJzi3zhqeJYADHANCGPUu9J+6fT5GLv82UWRGSxu6oJYCKVmxUcaBQuGm9udpWmPsvpme/CdHumqgsoaA==
   dependencies:
-    history "^5.2.0"
+    "@remix-run/router" "1.10.0"
 
 react@^18.1.0:
   version "18.2.0"
