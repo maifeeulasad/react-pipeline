@@ -4,9 +4,14 @@ import react from '@vitejs/plugin-react'
 import ViteVisualizer from "rollup-plugin-visualizer";
 
 // https://stackoverflow.com/a/15802301
-const headCommitHash = require('child_process')
-    .execSync('git rev-parse HEAD')
-    .toString();
+const headCommitHash = (): string | undefined => {
+  try {
+    return require('child_process')
+      .execSync('git rev-parse HEAD')
+      .toString();
+  } catch (_) { }
+  return undefined
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({

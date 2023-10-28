@@ -18,7 +18,7 @@ const CustomHeader = () => {
           <Link to="/page2">Page 2</Link>
           <Link to="/page3">Page 3</Link>
         </>
-  }
+      }
     />
   );
 };
@@ -27,7 +27,7 @@ const CustomFooter = () => (
   <div style={{ textAlign: 'center' }}>
     <div>
       { /* @ts-ignore */}
-      Trace: {__HEAD_COMMIT_HASH__}
+      {__HEAD_COMMIT_HASH__ ? `Trace: ${__HEAD_COMMIT_HASH__}` : ""}
     </div>
     <div>
       &copy; {new Date().getFullYear()} - Maifee Ul Asad
