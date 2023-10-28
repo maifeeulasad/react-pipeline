@@ -2,6 +2,10 @@
 
 GitHub page should be available here: https://maifeeulasad.github.io/react-pipeline
 
+## Using docker
+```bash
+docker compose up
+```
 
 ## Steps to reproduce:
  - Get `ssh-keygen`
