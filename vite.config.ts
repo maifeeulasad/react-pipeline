@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import svgrPlugin from 'vite-plugin-svgr'
 import react from '@vitejs/plugin-react'
 import ViteVisualizer from "rollup-plugin-visualizer";
+import { VitePluginRadar } from 'vite-plugin-radar'
 
 // https://stackoverflow.com/a/15802301
 const headCommitHash = (): string | undefined => {
@@ -30,6 +31,13 @@ export default defineConfig({
       svgrOptions: {
         icon: true,
         // ...svgr options (https://react-svgr.com/docs/options/)
+      },
+    }),
+    VitePluginRadar({
+      enableDev: true,
+      analytics: {
+        id: 'G-366693052',
+        // UA-136427840-2
       },
     }),
     // last one is the visualizer
