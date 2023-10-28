@@ -13,7 +13,7 @@ const Landing = () => (
         React + TS + Vite + Tailwind
       </div>
       <div className={styles.sassExample}>
-        node-sass is here for styling
+        sass is here for styling
       </div>
     </header>
   </div>
