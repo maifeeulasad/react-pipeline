@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  reactpipeline:
+    build: .
+    ports:
+      - "3010:3010"
