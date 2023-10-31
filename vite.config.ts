@@ -17,7 +17,7 @@ const headCommitHash = (): string | undefined => {
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
-    __HEAD_COMMIT_HASH__: JSON.stringify(headCommitHash),
+    __HEAD_COMMIT_HASH__: JSON.stringify(headCommitHash()),
   },
   // This changes the out put dir from dist to build
   // comment this out if that isn't relevant for your project
@@ -37,7 +37,7 @@ export default defineConfig({
       enableDev: true,
       analytics: {
         id: 'G-366693052',
-        // UA-136427840-2
+        // UA-136427840-2 // <--- old one, keeping here, for documentation purpose;
       },
     }),
     // last one is the visualizer
