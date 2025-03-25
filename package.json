@@ -47,7 +47,9 @@
     "build": "tsc && vite build",
     "serve": "vite preview",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "test:e2e": "cypress open",
+    "test:e2e:ci": "cypress run"
   },
   "eslintConfig": {
     "extends": [
