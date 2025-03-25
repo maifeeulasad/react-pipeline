@@ -27,6 +27,7 @@
   "include": [
     "src",
     "cypress/**/*.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "cypress.config.ts"
   ]
 }
