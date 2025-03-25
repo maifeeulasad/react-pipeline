@@ -2,12 +2,12 @@ import React from 'react';
 import Layout from 'antd/lib/layout';
 import { PageHeader } from '@ant-design/pro-layout';
 import { Link, useNavigate } from 'react-router-dom';
-import i18n from "i18next";
+import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-const { Header, Content, Footer } = Layout;
+import { useTranslation, initReactI18next } from 'react-i18next';
 
-import { useTranslation, initReactI18next } from "react-i18next";
+const { Header, Content, Footer } = Layout;
 
 i18n
   .use(initReactI18next)
@@ -16,21 +16,21 @@ i18n
     resources: {
       en: {
         translation: {
-          "title": "React Pipeline",
-          "sub-title": "SPA using React + TS + Vite + Tailwind",
-        }
+          title: 'React Pipeline',
+          'sub-title': 'SPA using React + TS + Vite + Tailwind',
+        },
       },
       bn: {
         translation: {
-          "title": "React Pipeline",
-          "sub-title": "React + TS + Vite + Tailwind ব্যবহার করে SPA",
-        }
-      }
+          title: 'React Pipeline',
+          'sub-title': 'React + TS + Vite + Tailwind ব্যবহার করে SPA',
+        },
+      },
     },
-    fallbackLng: "en",
+    fallbackLng: 'en',
     interpolation: {
-      escapeValue: false
-    }
+      escapeValue: false,
+    },
   });
 
 const CustomHeader = () => {
@@ -56,7 +56,7 @@ const CustomFooter = () => (
   <div style={{ textAlign: 'center' }}>
     <div>
       { /* @ts-ignore */}
-      {__HEAD_COMMIT_HASH__ ? `Trace: ${__HEAD_COMMIT_HASH__}` : ""}
+      {__HEAD_COMMIT_HASH__ ? `Trace: ${__HEAD_COMMIT_HASH__}` : ''}
     </div>
     <div>
       &copy; {new Date().getFullYear()} - Maifee Ul Asad
