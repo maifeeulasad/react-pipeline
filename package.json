@@ -54,7 +54,9 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "test:e2e": "cypress open",
-    "test:e2e:ci": "cypress run"
+    "test:e2e:ci": "cypress run",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix"
   },
   "eslintConfig": {
     "extends": [
