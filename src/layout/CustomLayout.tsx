@@ -2,16 +2,45 @@ import React from 'react';
 import Layout from 'antd/lib/layout';
 import { PageHeader } from '@ant-design/pro-layout';
 import { Link, useNavigate } from 'react-router-dom';
+import i18n from "i18next";
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 const { Header, Content, Footer } = Layout;
 
+import { useTranslation, initReactI18next } from "react-i18next";
+
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    resources: {
+      en: {
+        translation: {
+          "title": "React Pipeline",
+          "sub-title": "SPA using React + TS + Vite + Tailwind",
+        }
+      },
+      bn: {
+        translation: {
+          "title": "React Pipeline",
+          "sub-title": "React + TS + Vite + Tailwind ব্যবহার করে SPA",
+        }
+      }
+    },
+    fallbackLng: "en",
+    interpolation: {
+      escapeValue: false
+    }
+  });
+
 const CustomHeader = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   return (
     <PageHeader
       className="site-page-header h-full"
-      title={<Link to="/">React Pipeline</Link>}
-      subTitle="SPA using React + TS + Vite + Tailwind"
+      title={<Link to="/">{t('title')}</Link>}
+      subTitle={t('sub-title')}
       onBack={() => navigate(-1)}
       extra={
         <>
