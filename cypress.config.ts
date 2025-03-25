@@ -1,4 +1,5 @@
-import { defineConfig } from "cypress";
+/* eslint-disable */
+import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
