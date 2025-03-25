@@ -3007,6 +3007,11 @@ html-parse-stringify@^3.0.1:
   dependencies:
     void-elements "3.1.0"
 
+http-response-details@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/http-response-details/-/http-response-details-1.0.0.tgz#8bdeb0f4485788a865d815b41c017c9e4435dc59"
+  integrity sha512-ruNP4wWuWxWAh0SnEMZXPsfLwDw308GWJOvua+4gtoJpXSEct4a5/hqci6xAGuYvLVHiTDTh8vFO5MwDKlgomQ==
+
 http-signature@~1.3.6:
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/http-signature/-/http-signature-1.3.6.tgz#cb6fbfdf86d1c974f343be94e87f7fc128662cf9"
