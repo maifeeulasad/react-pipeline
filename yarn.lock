@@ -3841,6 +3841,11 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
+os-check@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/os-check/-/os-check-2.5.0.tgz#0ac39f78b9d6fe0b2f31562562b2ad21da5edde0"
+  integrity sha512-m5GtRcQsNGb4Dfnhm5Rg7jk9emW1c5rOsxPdRih7Cl8RMirA6qK+aaTndR9vS0Ady/CscKby8NNQbrLnoiyxFg==
+
 ospath@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/ospath/-/ospath-1.2.2.tgz#1276639774a3f8ef2572f7fe4280e0ea4550c07b"
