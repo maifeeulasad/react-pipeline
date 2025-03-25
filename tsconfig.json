@@ -25,6 +25,8 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "cypress/**/*.ts",
+    "vite.config.ts"
   ]
 }
