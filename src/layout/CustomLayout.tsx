@@ -2,6 +2,11 @@ import React, { ReactNode } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { PageContainer, ProLayout } from '@ant-design/pro-components';
 import { useLocation, Link } from 'react-router-dom';
+import { notification } from 'antd';
+// @ts-ignore
+import { copyText } from 'copy-clipboard-js';
+import CopyOutlined from '@ant-design/icons/CopyOutlined';
+
 import logo from './logo.svg';
 
 const defaultMenus: MenuDataItem[] = [
@@ -42,21 +47,40 @@ interface ICustomFooterMenuProps {
   collapsed?: boolean;
 }
 
+// @ts-ignore
+const TRACE: string = __HEAD_COMMIT_HASH__;
+
 const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
+  const [api, contextHolder] = notification.useNotification();
+
+  const copyLink = () => {
+    copyText(TRACE);
+    api.open({
+      key: TRACE,
+      message: 'Trace ID copied to clipboard',
+      description: `ID: ${TRACE}`,
+      duration: 2,
+      closeIcon: <div />,
+    });
+  };
+
   if (collapsed) return undefined;
   return (
+    <>
+      {contextHolder}
     <div style={{ textAlign: 'center' }}>
       <div style={{ textAlign: 'center', wordBreak: 'break-word', whiteSpace: 'pre-wrap' }}>
         <div>
           { /* @ts-ignore */}
-          {__HEAD_COMMIT_HASH__ ? `Trace: ${__HEAD_COMMIT_HASH__}` : ''}
+          {TRACE ? `Trace: ${TRACE}` : ''}
+          <CopyOutlined onClick={() => copyLink()} />
         </div>
         <div>
           &copy; {new Date().getFullYear()} - Maifee Ul Asad
         </div>
       </div>
-
     </div>
+    </>
   );
 }
 
