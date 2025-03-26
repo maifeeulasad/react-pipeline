@@ -1999,6 +1999,11 @@ convert-source-map@^1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
+copy-clipboard-js@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/copy-clipboard-js/-/copy-clipboard-js-1.0.3.tgz#ade70416404cc7997752f11f40cda67b8a1ecb3c"
+  integrity sha512-8dduCjn/B6cBFHF7cDsBMd1cAKrlGv58ZdNRcPRyUkRXYwZ+k0v2iQTtPgIFL6+wRSJkLzbLzfkyp6fIJkbt8Q==
+
 copy-to-clipboard@^3.3.3:
   version "3.3.3"
   resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.3.3.tgz#55ac43a1db8ae639a4bd99511c148cdd1b83a1b0"
