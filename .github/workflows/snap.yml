@@ -18,7 +18,7 @@ jobs:
         run: yarn build
 
       - name: 'Serve Prodcution Server'
-        run: serve -s build &
+        run: serve -s build -p 5173 &
 
       - name: 'Installing System Deps'
         run: sudo apt update -y && sudo apt install -y libgbm1
