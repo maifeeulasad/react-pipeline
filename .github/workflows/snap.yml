@@ -21,7 +21,7 @@ jobs:
         run: serve -s build &
 
       - name: 'Installing System Deps'
-        run: apt update && apt install -y libgbm1
+        run: sudo apt update -y && sudo apt install -y libgbm1
 
       - name: 'Take Snap'
         run: node puppeteer/snap.js
