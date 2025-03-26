@@ -1,92 +1,94 @@
-import React from 'react';
-import Layout from 'antd/lib/layout';
-import { PageHeader } from '@ant-design/pro-layout';
-import { Link, useNavigate } from 'react-router-dom';
-import i18n from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import React, { ReactNode } from 'react';
+import type { MenuDataItem } from '@ant-design/pro-components';
+import { PageContainer, ProLayout } from '@ant-design/pro-components';
+import { useLocation, Link } from 'react-router-dom';
+import logo from './logo.svg';
 
-import { useTranslation, initReactI18next } from 'react-i18next';
-
-const { Header, Content, Footer } = Layout;
-
-i18n
-  .use(initReactI18next)
-  .use(LanguageDetector)
-  .init({
-    resources: {
-      en: {
-        translation: {
-          title: 'React Pipeline',
-          'sub-title': 'SPA using React + TS + Vite + Tailwind',
-        },
+const defaultMenus: MenuDataItem[] = [
+  {
+    path: '/',
+    name: 'Pages',
+    children: [
+      {
+        path: '/page1',
+        name: 'Page 1 - Fallback to landing',
       },
-      bn: {
-        translation: {
-          title: 'React Pipeline',
-          'sub-title': 'React + TS + Vite + Tailwind ব্যবহার করে SPA',
-        },
+      {
+        path: '/page2',
+        name: 'Page 2',
       },
-    },
-    fallbackLng: 'en',
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+      {
+        path: '/page3',
+        name: 'Page 3',
+      },
+    ],
+  },
+  {
+    path: '/landing',
+    name: 'Landing Page',
+    // hideInMenu: true, // hidden from menu
+  },
+];
 
-const CustomHeader = () => {
-  const navigate = useNavigate();
-  const { t } = useTranslation();
+const loopMenuItem = (menus: MenuDataItem[]): MenuDataItem[] =>
+  menus.map(({ icon, children, ...item }) => ({
+    ...item,
+    icon: icon,
+    children: children && loopMenuItem(children),
+    path: item.path,
+  }));
+
+interface ICustomFooterMenuProps {
+  collapsed?: boolean;
+}
+
+const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
+  if (collapsed) return undefined;
   return (
-    <PageHeader
-      className="site-page-header h-full"
-      title={<Link to="/">{t('title')}</Link>}
-      subTitle={t('sub-title')}
-      onBack={() => navigate(-1)}
-      extra={
-        <>
-          <Link to="/page2">Page 2</Link>
-          <Link to="/page3">Page 3</Link>
-        </>
-      }
-    />
+    <div style={{ textAlign: 'center' }}>
+      <div style={{ textAlign: 'center', wordBreak: 'break-word', whiteSpace: 'pre-wrap' }}>
+        <div>
+          { /* @ts-ignore */}
+          {__HEAD_COMMIT_HASH__ ? `Trace: ${__HEAD_COMMIT_HASH__}` : ''}
+        </div>
+        <div>
+          &copy; {new Date().getFullYear()} - Maifee Ul Asad
+        </div>
+      </div>
+
+    </div>
+  );
+}
+
+interface ICustomLayoutProps {
+  children: ReactNode;
+}
+
+const CustomLayout = ({ children }: ICustomLayoutProps) => {
+  const location = useLocation();
+
+  return (
+    <ProLayout
+      logo={logo}
+      title="React Pipeline"
+      style={{ minHeight: '100vh' }}
+      fixSiderbar
+      location={location}
+      menu={{
+        request: async () => loopMenuItem(defaultMenus),
+      }}
+      route={{ routes: defaultMenus }}
+      menuItemRender={(item, dom) => (
+        <Link to={item.path || '/'}>{dom}</Link>
+      )}
+      subMenuItemRender={(_, dom) => <>{dom}</>}
+      menuFooterRender={(props) => <CustomFooterMenu {...props} />}
+    >
+      <PageContainer header={{ title: true }}>
+        {children}
+      </PageContainer>
+    </ProLayout>
   );
 };
-
-const CustomFooter = () => (
-  <div style={{ textAlign: 'center' }}>
-    <div>
-      { /* @ts-ignore */}
-      {__HEAD_COMMIT_HASH__ ? `Trace: ${__HEAD_COMMIT_HASH__}` : ''}
-    </div>
-    <div>
-      &copy; {new Date().getFullYear()} - Maifee Ul Asad
-    </div>
-  </div>
-);
-
-interface ILayoutProps {
-  children: any
-}
-
-// eslint-disable-next-line react/prefer-stateless-function
-class CustomLayout extends React.Component<ILayoutProps> {
-  render() {
-    const { children } = this.props;
-
-    return (
-      <Layout style={{ minHeight: '100vh' }}>
-        <Header style={{ backgroundColor: 'white' }}>
-          <CustomHeader />
-        </Header>
-        <Content>
-          {children}
-        </Content>
-        <Footer style={{ backgroundColor: 'white' }}>
-          <CustomFooter />
-        </Footer>
-      </Layout>
-    );
-  }
-}
 
 export { CustomLayout };
