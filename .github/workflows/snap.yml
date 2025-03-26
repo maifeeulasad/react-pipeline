@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  lighthouse:
+  snap:
     runs-on: ubuntu-latest
 
     steps:
