@@ -2118,10 +2118,10 @@ convert-source-map@^1.7.0:
   dependencies:
     safe-buffer "~5.1.1"
 
-copy-clipboard-js@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/copy-clipboard-js/-/copy-clipboard-js-1.0.3.tgz#ade70416404cc7997752f11f40cda67b8a1ecb3c"
-  integrity sha512-8dduCjn/B6cBFHF7cDsBMd1cAKrlGv58ZdNRcPRyUkRXYwZ+k0v2iQTtPgIFL6+wRSJkLzbLzfkyp6fIJkbt8Q==
+copy-clipboard-js@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/copy-clipboard-js/-/copy-clipboard-js-2.1.0.tgz#67b6436ff335695824cc37178610b8878a40b656"
+  integrity sha512-u0IoLNffTjv16wqqbIMGK2pBy/7SbejOhLRl5SlXCJXU+Jz2WRtxwn8VyXlek/Ly+2gkWXXYIca5avCboyCMLw==
 
 copy-to-clipboard@^3.3.3:
   version "3.3.3"
@@ -3344,10 +3344,10 @@ http-proxy-agent@^7.0.0, http-proxy-agent@^7.0.1:
     agent-base "^7.1.0"
     debug "^4.3.4"
 
-http-response-details@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/http-response-details/-/http-response-details-1.1.1.tgz#09927d4463e03c5f362d0fcf8c809ae670d4cc60"
-  integrity sha512-A3KbmKTPalQRA7KZXevgUa/EyrtBNsXXf8JVv9vU3Bi3N8AMKb/BcezT4+9IOVIQaP4maTSN54ZnyLvtUqiMhw==
+http-response-details@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/http-response-details/-/http-response-details-2.1.0.tgz#96ccb1026380e037192ea98247551c804efeb22b"
+  integrity sha512-KlIUrSCD6tXJHrYm209s9bY1PYQfoTnLfqpR2DCylZtMXPx8hW16BTLHOEm0tHVm9rsFIxi84P91nHdZLSWajA==
 
 http-signature@~1.3.6:
   version "1.3.6"
