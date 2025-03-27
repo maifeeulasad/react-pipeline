@@ -2,11 +2,10 @@ import React, { ReactNode } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { PageContainer, ProLayout } from '@ant-design/pro-components';
 import { useLocation, Link } from 'react-router-dom';
-import { notification } from 'antd';
-// @ts-ignore
+import { notification, Cascader, Input, Select, Space, Form, Button } from 'antd';
 import { copyText } from 'copy-clipboard-js';
 import CopyOutlined from '@ant-design/icons/CopyOutlined';
-
+import { SettingOutlined, SearchOutlined } from '@ant-design/icons';
 import logo from './logo.svg';
 
 const defaultMenus: MenuDataItem[] = [
@@ -84,6 +83,48 @@ const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
   );
 };
 
+
+const SearchBar = () => {
+  const sections = ['whole', 'section1', 'section2', 'section3'];
+  const onFinish = (values: any) => {
+    console.log('Success:', values);
+  };
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
+  const selectBefore = (
+    <Select defaultValue={sections[0] || ''} options={sections.map((section) => ({ name: section, value: section }))} />
+  );
+  return (
+    <Form
+      name="basic"
+      labelCol={{ span: 8 }}
+      wrapperCol={{ span: 16 }}
+      style={{ maxWidth: 600 }}
+      initialValues={{ remember: true }}
+      onFinish={onFinish}
+      onFinishFailed={onFinishFailed}
+      autoComplete="off"
+    >
+      <Form.Item
+        label="Username"
+        name="username"
+        rules={[{ required: true, message: 'Please input your username!' }]}
+      >
+        <Input addonBefore={selectBefore} />
+
+      </Form.Item>
+      <Form.Item label={null}>
+      <Button type="primary" htmlType="submit">
+        Submit
+      </Button>
+    </Form.Item>
+    </Form>
+
+  );
+};
+
 const renderMenuItem = (item: any, dom: React.ReactNode) => <Link to={item.path || '/'}>{dom}</Link>;
 
 const subMenuItemRender = (item: any, dom: React.ReactNode) => <Link to={item.path || '/'}>{dom}</Link>;
@@ -112,6 +153,7 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
       menuFooterRender={(props) => <CustomFooterMenu {...props} />}
     >
       <PageContainer header={{ title: true }}>
+        <SearchBar />
         {children}
       </PageContainer>
     </ProLayout>
