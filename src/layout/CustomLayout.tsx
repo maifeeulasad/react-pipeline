@@ -2,10 +2,10 @@ import React, { ReactNode } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { PageContainer, ProLayout } from '@ant-design/pro-components';
 import { useLocation, Link } from 'react-router-dom';
-import { notification, Cascader, Input, Select, Space, Form, Button } from 'antd';
+import { notification, Input, Select, Form, Button } from 'antd';
 import { copyText } from 'copy-clipboard-js';
 import CopyOutlined from '@ant-design/icons/CopyOutlined';
-import { SettingOutlined, SearchOutlined } from '@ant-design/icons';
+import { ReloadOutlined, SearchOutlined } from '@ant-design/icons';
 import logo from './logo.svg';
 
 const defaultMenus: MenuDataItem[] = [
@@ -92,36 +92,63 @@ const SearchBar = () => {
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
+  const [form] = Form.useForm();
 
-  const selectBefore = (
-    <Select defaultValue={sections[0] || ''} options={sections.map((section) => ({ name: section, value: section }))} />
-  );
   return (
     <Form
-      name="basic"
-      labelCol={{ span: 8 }}
-      wrapperCol={{ span: 16 }}
-      style={{ maxWidth: 600 }}
-      initialValues={{ remember: true }}
+      form={form}
+      layout="inline"
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
-      autoComplete="off"
+      autoComplete="on"
+      style={{
+        display: 'flex',
+        padding: 8,
+      }}
     >
       <Form.Item
-        label="Username"
-        name="username"
-        rules={[{ required: true, message: 'Please input your username!' }]}
+        name="range"
+        style={{ padding: 2 }}
+        rules={[{ required: true, message: 'Please select a range!' }]}
       >
-        <Input addonBefore={selectBefore} />
-
+        <Select
+          defaultValue={sections[0] || ''}
+          options={sections.map((section) => ({ label: section, value: section }))}
+          style={{ width: 120 }}
+        />
       </Form.Item>
-      <Form.Item label={null}>
-      <Button type="primary" htmlType="submit">
-        Submit
-      </Button>
-    </Form.Item>
-    </Form>
 
+      <Form.Item
+        style={{ flex: 1, padding: 2 }}
+        name="keyword"
+        rules={[{ required: true, message: 'Please input your keyword!' }]}
+      >
+        <Input
+          placeholder="Search..."
+          style={{ width: '100%' }}
+        />
+      </Form.Item>
+      <Form.Item style={{ padding: 2 }}>
+        <Button
+          style={{
+            background: '#1677ff',
+          }}
+          icon={<ReloadOutlined />}
+          type="primary"
+          onClick={() => form.resetFields()}
+        />
+      </Form.Item>
+      <Form.Item style={{ padding: 2 }}>
+        <Button
+          style={{
+            background: '#1677ff',
+          }}
+          icon={<SearchOutlined />}
+          type="primary"
+          htmlType="submit"
+        />
+      </Form.Item>
+    </Form>
   );
 };
 
