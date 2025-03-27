@@ -38,7 +38,7 @@ const defaultMenus: MenuDataItem[] = [
 const loopMenuItem = (menus: MenuDataItem[]): MenuDataItem[] =>
   menus.map(({ icon, children, ...item }) => ({
     ...item,
-    icon: icon,
+    icon,
     children: children && loopMenuItem(children),
     path: item.path,
   }));
@@ -68,21 +68,21 @@ const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
   return (
     <>
       {contextHolder}
-    <div style={{ textAlign: 'center' }}>
-      <div style={{ textAlign: 'center', wordBreak: 'break-word', whiteSpace: 'pre-wrap' }}>
-        <div>
-          { /* @ts-ignore */}
-          {TRACE ? `Trace: ${TRACE}` : ''}
-          <CopyOutlined onClick={() => copyLink()} />
-        </div>
-        <div>
-          &copy; {new Date().getFullYear()} - Maifee Ul Asad
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', wordBreak: 'break-word', whiteSpace: 'pre-wrap' }}>
+          <div>
+            { /* @ts-ignore */}
+            {TRACE ? `Trace: ${TRACE}` : ''}
+            <CopyOutlined onClick={() => copyLink()} />
+          </div>
+          <div>
+            &copy; {new Date().getFullYear()} - Maifee Ul Asad
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
-}
+};
 
 interface ICustomLayoutProps {
   children: ReactNode;
