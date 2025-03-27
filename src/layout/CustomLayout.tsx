@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { PageContainer, ProLayout } from '@ant-design/pro-components';
 import { useLocation, Link } from 'react-router-dom';
-import { notification, Input, Select, Form, Button } from 'antd';
+import { notification, Input, Select, Form, Button, Affix } from 'antd';
 import { copyText } from 'copy-clipboard-js';
 import CopyOutlined from '@ant-design/icons/CopyOutlined';
 import { ReloadOutlined, SearchOutlined } from '@ant-design/icons';
@@ -104,6 +104,8 @@ const SearchBar = () => {
       style={{
         display: 'flex',
         padding: 8,
+        backdropFilter: 'blur(10px)',
+        backgroundColor: 'rgba(255, 255, 255, 0.5)',
       }}
     >
       <Form.Item
@@ -180,7 +182,9 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
       menuFooterRender={(props) => <CustomFooterMenu {...props} />}
     >
       <PageContainer header={{ title: true }}>
-        <SearchBar />
+        <Affix offsetTop={0}>
+          <SearchBar />
+        </Affix>
         {children}
       </PageContainer>
     </ProLayout>
