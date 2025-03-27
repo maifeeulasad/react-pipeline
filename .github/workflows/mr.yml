@@ -1,4 +1,4 @@
-name: Build and Publish to GH Pages
+name: Action before Merge
 
 on:
   pull_request:
