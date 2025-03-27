@@ -84,6 +84,10 @@ const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
   );
 };
 
+const renderMenuItem = (item: any, dom: React.ReactNode) => <Link to={item.path || '/'}>{dom}</Link>;
+
+const subMenuItemRender = (item: any, dom: React.ReactNode) => <Link to={item.path || '/'}>{dom}</Link>;
+
 interface ICustomLayoutProps {
   children: ReactNode;
 }
@@ -102,10 +106,9 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
         request: async () => loopMenuItem(defaultMenus),
       }}
       route={{ routes: defaultMenus }}
-      menuItemRender={(item, dom) => (
-        <Link to={item.path || '/'}>{dom}</Link>
-      )}
-      subMenuItemRender={(_, dom) => <>{dom}</>}
+      menuItemRender={renderMenuItem}
+      subMenuItemRender={subMenuItemRender}
+      // eslint-disable-next-line
       menuFooterRender={(props) => <CustomFooterMenu {...props} />}
     >
       <PageContainer header={{ title: true }}>
