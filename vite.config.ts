@@ -45,9 +45,9 @@ export default defineConfig({
       },
     }),
     // last one is the visualizer
-    ViteVisualizer({
-      filename: './build/report-rollup-plugin-visualizer.html',
-      brotliSize: true,
-    }),
+    // ViteVisualizer({
+    //   filename: './build/report-rollup-plugin-visualizer.html',
+    //   brotliSize: true,
+    // }),
   ],
 });
