@@ -1,1 +1,0 @@
-import{u as r}from"./state-ClsMfsNq.js";import{a as e}from"./index-BlTU1Kx8.js";const s=()=>{const[t]=r("global/counter",0);return e("div",{children:["Page 2",e("div",{style:{border:"1px solid red",padding:"10px"},children:["global/counter state: ",t]})]})};export{s as default};
