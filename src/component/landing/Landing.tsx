@@ -3,7 +3,8 @@ import React from 'react';
 import styles from './Landing.module.scss';
 
 import logo from './landing.svg';
-import { usePersistentState } from '../../state/state';
+// @ts-ignore
+import { usePersistentState } from 'persistent-state-react';
 
 const Landing = () => {
   const [count1, setCount] = usePersistentState<number>('global/counter', 0);

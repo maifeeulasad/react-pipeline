@@ -1,5 +1,6 @@
 import React from 'react';
-import { usePersistentState } from '../state/state';
+// @ts-ignore
+import { usePersistentState } from 'persistent-state-react';
 
 const Page2 = () => {
   const [countInDifferentPage] = usePersistentState('global/counter', 0);
