@@ -6,6 +6,8 @@ import ViteVisualizer from 'rollup-plugin-visualizer';
 import { VitePWA } from 'vite-plugin-pwa'
 import { VitePluginRadar } from 'vite-plugin-radar';
 
+const maxAgeSeconds = 365 * 24 * 60 * 60; // Cache for 1 year
+
 // https://stackoverflow.com/a/15802301
 const headCommitHash = (): string | undefined => {
   try {
@@ -30,7 +32,38 @@ export default defineConfig({
   base: './',
   plugins: [
     react(),
-    VitePWA({ registerType: 'autoUpdate' }),
+    VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{html,js,css,png,jpg,svg,ico,json,woff2,ttf,mp4}'],
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.destination === 'document',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'html-cache',
+              expiration: { maxEntries: 10, maxAgeSeconds },
+            },
+          },
+          {
+            urlPattern: ({ request }) => ['script', 'style', 'worker'].includes(request.destination),
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'assets-cache',
+              expiration: { maxEntries: 50, maxAgeSeconds },
+            },
+          },
+          {
+            urlPattern: ({ request }) => ['image', 'font'].includes(request.destination),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'media-cache',
+              expiration: { maxEntries: 100, maxAgeSeconds },
+            },
+          },
+        ],
+      },
+    }),
     svgrPlugin({
       svgrOptions: {
         icon: true,
