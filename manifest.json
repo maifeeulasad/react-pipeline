@@ -1,6 +1,6 @@
 {
-  "short_name": "React + Vite",
-  "name": "React ❤️ with Vite ⚡",
+  "short_name": "React Pipeline",
+  "name": "React Pipeline from Maifee Ul Asad",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./react-pipeline/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
