@@ -83,7 +83,6 @@ const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
   );
 };
 
-
 const SearchBar = () => {
   const sections = ['whole', 'section1', 'section2', 'section3'];
   const onFinish = (values: any) => {
