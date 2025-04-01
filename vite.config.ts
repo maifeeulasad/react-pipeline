@@ -3,6 +3,7 @@ import { defineConfig } from 'vite';
 import svgrPlugin from 'vite-plugin-svgr';
 import react from '@vitejs/plugin-react';
 import ViteVisualizer from 'rollup-plugin-visualizer';
+import { VitePWA } from 'vite-plugin-pwa'
 import { VitePluginRadar } from 'vite-plugin-radar';
 
 // https://stackoverflow.com/a/15802301
@@ -29,6 +30,7 @@ export default defineConfig({
   base: './',
   plugins: [
     react(),
+    VitePWA({ registerType: 'autoUpdate' }),
     svgrPlugin({
       svgrOptions: {
         icon: true,
