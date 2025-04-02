@@ -98,7 +98,7 @@ const SearchBar = () => {
     console.log('Form changed:', changedValues);
     const { range, keyword } = changedValues;
     console.log('Search triggered with:', { range, keyword });
-    setResetVisibility(range===undefined && (keyword===undefined || keyword===''));
+    setResetVisibility(range === undefined && (keyword === undefined || keyword === ''));
   };
 
   return (
@@ -118,7 +118,6 @@ const SearchBar = () => {
     >
       <Form.Item
         name="range"
-        style={{ padding: 2 }}
         rules={[{ required: true, message: 'Please select a range!' }]}
       >
         <Select
@@ -129,7 +128,7 @@ const SearchBar = () => {
       </Form.Item>
 
       <Form.Item
-        style={{ flex: 1, padding: 2 }}
+        style={{ flex: 1 }}
         name="keyword"
         rules={[{ required: true, message: 'Please input your keyword!' }]}
       >
@@ -138,8 +137,7 @@ const SearchBar = () => {
           style={{ width: '100%' }}
         />
       </Form.Item>
-      <Form.Item 
-        style={{ padding: 2 }} 
+      <Form.Item
         hidden={resetVisibility}
       >
         <Button
@@ -151,7 +149,7 @@ const SearchBar = () => {
           onClick={() => form.resetFields()}
         />
       </Form.Item>
-      <Form.Item style={{ padding: 2 }}>
+      <Form.Item>
         <Button
           style={{
             background: '#1677ff',
