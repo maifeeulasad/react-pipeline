@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* for antd-design-pro components */
+.ant-pro-page-container-children-container{
+    padding-inline: 0 !important;
+}
