@@ -9,6 +9,12 @@
       "purpose": "any"
     },
     {
+      "src": "logo144.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "maskable"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192",
