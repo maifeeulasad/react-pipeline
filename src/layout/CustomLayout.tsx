@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { PageContainer, ProLayout } from '@ant-design/pro-components';
 import { useLocation, Link } from 'react-router-dom';
@@ -92,11 +92,20 @@ const SearchBar = () => {
     console.log('Failed:', errorInfo);
   };
   const [form] = Form.useForm();
+  const [resetVisibility, setResetVisibility] = useState(true);
+
+  const onValuesChange = (changedValues: any) => {
+    console.log('Form changed:', changedValues);
+    const { range, keyword } = changedValues;
+    console.log('Search triggered with:', { range, keyword });
+    setResetVisibility(range===undefined && (keyword===undefined || keyword===''));
+  };
 
   return (
     <Form
       form={form}
       layout="inline"
+      onValuesChange={onValuesChange}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       autoComplete="on"
@@ -129,7 +138,10 @@ const SearchBar = () => {
           style={{ width: '100%' }}
         />
       </Form.Item>
-      <Form.Item style={{ padding: 2 }}>
+      <Form.Item 
+        style={{ padding: 2 }} 
+        hidden={resetVisibility}
+      >
         <Button
           style={{
             background: '#1677ff',
