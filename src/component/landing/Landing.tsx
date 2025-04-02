@@ -57,7 +57,7 @@ const Landing = () => {
             {loading && 'Loading...'}
             {error && `Error: ${error}`}
             <table>
-            {data && (data || []).map((item: any) => (
+              {data && (data || []).map((item: any) => (
                 <tr key={item.id}>
                   <td>{item.title}</td>
                   <td>{item.body}</td>
