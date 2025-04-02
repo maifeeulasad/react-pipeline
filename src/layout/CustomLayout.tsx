@@ -194,7 +194,9 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
         <Affix offsetTop={0}>
           <SearchBar />
         </Affix>
-        {children}
+        <div style={{ padding: 16, background: 'transparent' }}>
+          {children}
+        </div>
       </PageContainer>
     </ProLayout>
   );
