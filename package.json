@@ -55,7 +55,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "rm -rf build && tsc && vite build",
     "serve": "vite preview",
     "predeploy": "yarn lint && yarn build",
     "deploy": "gh-pages -d build",
