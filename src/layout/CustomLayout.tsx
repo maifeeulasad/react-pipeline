@@ -188,7 +188,6 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   return (
     <ProLayout
       logo={logo}
