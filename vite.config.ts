@@ -36,6 +36,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       workbox: {
         globPatterns: ['**/*.{html,js,css,png,jpg,svg,ico,json,woff2,ttf,mp4}'],
+        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB limit
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.destination === 'document',
