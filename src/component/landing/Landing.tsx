@@ -13,12 +13,12 @@ const Landing = () => {
 
   const [count2] = usePersistentState('global/counter', 0);
 
-  // const { data, error, loading } = useFetch('https://jsonplaceholder.typicode.com/posts/', {
-  //   method: 'GET',
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  // });
+  const { data, error, loading } = useFetch('https://jsonplaceholder.typicode.com/posts/', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 
   return (
     <div style={{ textAlign: 'center' }}>
@@ -52,7 +52,7 @@ const Landing = () => {
             </button>
           </p>
         </div>
-        {/* <div>
+        <div>
           <p>
             {loading && 'Loading...'}
             {error && `Error: ${error}`}
@@ -65,7 +65,7 @@ const Landing = () => {
               ))}
             </table>
           </p>
-        </div> */}
+        </div>
       </header>
     </div>
   );
