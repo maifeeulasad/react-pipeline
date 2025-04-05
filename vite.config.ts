@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { defineConfig } from 'vite';
+import { defineConfig, type PluginOption } from 'vite';
 import svgrPlugin from 'vite-plugin-svgr';
 import react from '@vitejs/plugin-react';
 import ViteVisualizer from 'rollup-plugin-visualizer';
@@ -78,9 +78,9 @@ export default defineConfig({
       },
     }),
     // last one is the visualizer
-    // ViteVisualizer({
-    //   filename: './build/report-rollup-plugin-visualizer.html',
-    //   brotliSize: true,
-    // }),
+    ViteVisualizer({
+      filename: './build/report-rollup-plugin-visualizer.html',
+      brotliSize: true,
+    }) as PluginOption,
   ],
 });
