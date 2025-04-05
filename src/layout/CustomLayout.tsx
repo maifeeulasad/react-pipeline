@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import type { MenuDataItem } from '@ant-design/pro-components';
 import { PageContainer, ProLayout } from '@ant-design/pro-components';
 import { useLocation, Link } from 'react-router-dom';
@@ -174,6 +174,21 @@ interface ICustomLayoutProps {
 const CustomLayout = ({ children }: ICustomLayoutProps) => {
   const location = useLocation();
 
+  const [scrollPercent, setScrollPercent] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / scrollHeight) * 100;
+      setScrollPercent(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   return (
     <ProLayout
       logo={logo}
@@ -192,7 +207,21 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
     >
       <PageContainer header={{ title: true }}>
         <Affix offsetTop={0}>
-          <SearchBar />
+          <div style={{ position: 'relative' }}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                height: 4,
+                width: `${scrollPercent}%`,
+                background: '#1890ff',
+                transition: 'width 0.1s ease-out',
+                zIndex: 9999,
+              }}
+            />
+            <SearchBar />
+          </div>
         </Affix>
         <div style={{ padding: 16, background: 'transparent' }}>
           {children}
