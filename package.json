@@ -17,7 +17,7 @@
     "http-response-details": "^2.1.0",
     "i18next": "^24.2.3",
     "i18next-browser-languagedetector": "^8.0.4",
-    "network-react": "^1.0.1",
+    "network-react": "^1.1.0",
     "os-check": "^2.5.0",
     "persistent-state-react": "0.0.5",
     "react": "^18.1.0",
