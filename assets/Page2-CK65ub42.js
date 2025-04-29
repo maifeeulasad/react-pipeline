@@ -1,1 +1,0 @@
-import{e as r}from"./index-Cd5N54-w.js";import{j as e}from"./index-DvfxwWFm.js";const a=()=>{const[t]=r.usePersistentState("global/counter",0);return e("div",{children:["Page 2",e("div",{style:{border:"1px solid red",padding:"10px"},children:["global/counter state: ",t]})]})};export{a as default};
