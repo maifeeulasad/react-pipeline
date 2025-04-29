@@ -1,0 +1,1 @@
+import{j as e}from"./index-CaBrtzsg.js";import{e as s}from"./index-C1nS2fvE.js";const n=()=>{const[t]=s.usePersistentState("global/counter",0);return e.jsxs("div",{children:["Page 2",e.jsxs("div",{style:{border:"1px solid red",padding:"10px"},children:["global/counter state: ",t]})]})};export{n as default};
