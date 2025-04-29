@@ -110,7 +110,7 @@ const UserTable = () => {
         title="User Management"
         rowKey="id"
         defaultPageSize={10}
-        service={new UserService()}
+        service={UserService}
         columns={[
           {
             dataIndex: 'name',
