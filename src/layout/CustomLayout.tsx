@@ -14,12 +14,12 @@ const defaultMenus: MenuDataItem[] = [
     name: 'Pages',
     children: [
       {
-        path: '/page1',
-        name: 'Page 1 - Fallback to landing',
-      },
-      {
         path: '/page2',
         name: 'Page 2',
+      },
+      {
+        path: '/page1',
+        name: 'Page 1 - Fallback to landing',
       },
       {
         path: '/page3',
