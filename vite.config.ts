@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { defineConfig, type PluginOption } from 'vite';
 import svgrPlugin from 'vite-plugin-svgr';
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import ViteVisualizer from 'rollup-plugin-visualizer';
 import { VitePWA } from 'vite-plugin-pwa'
 import { VitePluginRadar } from 'vite-plugin-radar';
