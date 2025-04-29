@@ -1,14 +1,56 @@
 import React from 'react';
 
+import styles from './Landing.module.scss';
+
+import logo from './landing.svg';
+// @ts-ignore
+import CrudTable from 'antd-crud-table';
 // @ts-ignore
 import { usePersistentState } from 'persistent-state-react';
 // @ts-ignore
 import { useFetch } from 'network-react';
-import styles from './Landing.module.scss';
 
-import logo from './landing.svg';
 
-const Landing = () => {
+// Example usage
+interface User {
+  id: number;
+  name: string;
+  age: number;
+  createdAt: string;
+  status: 'active' | 'inactive';
+  isAdmin: boolean;
+}
+
+class UserService {
+  async getList(params: any): Promise<{ data: User[]; total: number }> {
+    // Implementation
+    // return { data: [], total: 0 };
+    return {
+      data: [
+        { id: 1, name: 'John Doe', age: 30, createdAt: '2023-01-01', status: 'active', isAdmin: true },
+        { id: 2, name: 'Jane Smith', age: 25, createdAt: '2023-02-01', status: 'inactive', isAdmin: false },
+      ],
+      total: 2,
+    }
+  }
+
+  async create(data: Partial<User>) {
+    // Implementation
+    return data as User;
+  }
+
+  async update(id: number, data: Partial<User>) {
+    // Implementation
+    return { id, ...data } as User;
+  }
+
+  async delete(id: number) {
+    // Implementation
+  }
+}
+
+const UserTable = () => {
+
   const [count1, setCount] = usePersistentState<number>('global/counter', 0);
 
   const [count2] = usePersistentState('global/counter', 0);
@@ -19,8 +61,8 @@ const Landing = () => {
       'Content-Type': 'application/json',
     },
   });
-
   return (
+
     <div style={{ textAlign: 'center' }}>
       <header>
         <img src={logo} className="animate-spin h-10 mx-auto" alt="logo" />
@@ -67,9 +109,57 @@ const Landing = () => {
           </p>
         </div>
       </header>
+
+      <CrudTable<User>
+        title="User Management"
+        rowKey="id"
+        defaultPageSize={10}
+        service={new UserService()}
+        columns={[
+          {
+            dataIndex: 'name',
+            title: 'Name',
+            fieldType: 'string',
+            formConfig: { required: true },
+          },
+          {
+            dataIndex: 'age',
+            title: 'Age',
+            fieldType: 'number',
+          },
+          {
+            dataIndex: 'age2',
+            title: 'Age2',
+            fieldType: 'number',
+          },
+          {
+            dataIndex: 'createdAt',
+            title: 'Created At',
+            fieldType: 'date',
+          },
+          {
+            dataIndex: 'status',
+            title: 'Status',
+            fieldType: 'enum',
+            enumOptions: {
+              active: { text: 'Active' },
+              inactive: { text: 'Inactive' },
+            },
+          },
+          {
+            dataIndex: 'isAdmin',
+            title: 'Administrator',
+            fieldType: 'boolean',
+          },
+        ]}
+      />
     </div>
+
+
   );
 };
+
+const Landing = UserTable;
 
 // eslint-disable-next-line import/no-default-export
 export default Landing;
