@@ -20,6 +20,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: 'Installing deps'    
-      run: yarn
+      run: npm i -g pnpm && pnpm i
     - name: 'Predeploy' # no need to add test and everything seperately, we ensure everything with predeploy
-      run: yarn predeploy
+      run: pnpm predeploy

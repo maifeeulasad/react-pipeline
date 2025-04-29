@@ -11,11 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: 'Installing build deps'
+        run: npm i -g pnpm
+
       - name: 'Installing deps'
-        run: yarn && npm i -g serve
+        run: pnpm i && npm i -g serve
 
       - name: 'Build Prodcution'
-        run: yarn build
+        run: pnpm build
 
       - name: 'Serve Prodcution Server'
         run: serve -s build -p 5173 &
