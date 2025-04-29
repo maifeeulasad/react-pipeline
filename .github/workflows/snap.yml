@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: 'Installing build deps'
+        run: npm i -g pnpm
+
       - name: 'Installing deps'
         run: pnpm i && npm i -g serve
 
