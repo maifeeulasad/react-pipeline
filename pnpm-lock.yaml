@@ -76,13 +76,13 @@ importers:
         version: 5.8.0(rollup@4.37.0)
       vite:
         specifier: ^6.2.3
-        version: 6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0)
+        version: 6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0)
       vite-plugin-radar:
         specifier: ^0.9.1
-        version: 0.9.1(vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0))
+        version: 0.9.1(vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0))
       vite-plugin-svgr:
         specifier: ^2.1.0
-        version: 2.2.1(vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0))
+        version: 2.2.1(vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0))
       web-vitals:
         specifier: ^2.1.4
         version: 2.1.4
@@ -91,8 +91,8 @@ importers:
         specifier: ^27.5.1
         version: 27.5.2
       '@types/node':
-        specifier: ^16.11.35
-        version: 16.11.47
+        specifier: ^18.19.87
+        version: 18.19.87
       '@types/react':
         specifier: ^18.0.9
         version: 18.3.20
@@ -152,7 +152,7 @@ importers:
         version: 5.8.2
       vite-plugin-pwa:
         specifier: ^1.0.0
-        version: 1.0.0(vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0))(workbox-build@7.3.0)(workbox-window@7.3.0)
+        version: 1.0.0(vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0))(workbox-build@7.3.0)(workbox-window@7.3.0)
 
 packages:
 
@@ -1411,14 +1411,8 @@ packages:
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
 
-  '@types/node@16.11.47':
-    resolution: {integrity: sha512-fpP+jk2zJ4VW66+wAMFoBJlx1bxmBKx4DUFf68UHgdGCOuyUTDlLWqsaNPJh7xhNDykyJ9eIzAygilP/4WoN8g==}
-
-  '@types/node@18.18.8':
-    resolution: {integrity: sha512-OLGBaaK5V3VRBS1bAkMVP2/W9B+H8meUfl866OrMNQqt7wDgdpWPp5o6gmIc9pB+lIQHSq4ZL8ypeH1vPxcPaQ==}
-
-  '@types/node@20.8.10':
-    resolution: {integrity: sha512-TlgT8JntpcbmKUFzjhsyhGfP2fsiz1Mv56im6enJ905xG1DAYesxJaeSbGqQmAw8OWPdhyJGhGSQGKRNJ45u9w==}
+  '@types/node@18.19.87':
+    resolution: {integrity: sha512-OIAAu6ypnVZHmsHCeJ+7CCSub38QNBS9uceMQeg7K5Ur0Jr+wG9wEOEvvMbhp09pxD5czIUy/jND7s7Tb6Nw7A==}
 
   '@types/parse-json@4.0.0':
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -6006,16 +6000,9 @@ snapshots:
 
   '@types/json5@0.0.29': {}
 
-  '@types/node@16.11.47': {}
-
-  '@types/node@18.18.8':
+  '@types/node@18.19.87':
     dependencies:
       undici-types: 5.26.5
-
-  '@types/node@20.8.10':
-    dependencies:
-      undici-types: 5.26.5
-    optional: true
 
   '@types/parse-json@4.0.0': {}
 
@@ -6044,7 +6031,7 @@ snapshots:
 
   '@types/yauzl@2.10.2':
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 18.19.87
     optional: true
 
   '@typescript-eslint/eslint-plugin@5.32.0(@typescript-eslint/parser@5.32.0(eslint@8.21.0)(typescript@5.8.2))(eslint@8.21.0)(typescript@5.8.2)':
@@ -6667,7 +6654,7 @@ snapshots:
     dependencies:
       '@cypress/request': 3.0.1
       '@cypress/xvfb': 1.2.4(supports-color@8.1.1)
-      '@types/node': 18.18.8
+      '@types/node': 18.19.87
       '@types/sinonjs__fake-timers': 8.1.1
       '@types/sizzle': 2.3.5
       arch: 2.2.0
@@ -9350,36 +9337,36 @@ snapshots:
       core-util-is: 1.0.2
       extsprintf: 1.4.1
 
-  vite-plugin-pwa@1.0.0(vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0))(workbox-build@7.3.0)(workbox-window@7.3.0):
+  vite-plugin-pwa@1.0.0(vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0))(workbox-build@7.3.0)(workbox-window@7.3.0):
     dependencies:
       debug: 4.4.0(supports-color@8.1.1)
       pretty-bytes: 6.1.1
       tinyglobby: 0.2.12
-      vite: 6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0)
+      vite: 6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0)
       workbox-build: 7.3.0
       workbox-window: 7.3.0
     transitivePeerDependencies:
       - supports-color
 
-  vite-plugin-radar@0.9.1(vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0)):
+  vite-plugin-radar@0.9.1(vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0)):
     dependencies:
-      vite: 6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0)
+      vite: 6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0)
 
-  vite-plugin-svgr@2.2.1(vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0)):
+  vite-plugin-svgr@2.2.1(vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0)):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@svgr/core': 6.3.1
-      vite: 6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0)
+      vite: 6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0)
     transitivePeerDependencies:
       - supports-color
 
-  vite@6.2.3(@types/node@16.11.47)(sass@1.54.4)(terser@5.39.0):
+  vite@6.2.3(@types/node@18.19.87)(sass@1.54.4)(terser@5.39.0):
     dependencies:
       esbuild: 0.25.1
       postcss: 8.5.3
       rollup: 4.37.0
     optionalDependencies:
-      '@types/node': 16.11.47
+      '@types/node': 18.19.87
       fsevents: 2.3.3
       sass: 1.54.4
       terser: 5.39.0
