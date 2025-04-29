@@ -20,9 +20,8 @@ interface User {
 }
 
 class UserService {
-  async getList(params: any): Promise<{ data: User[]; total: number }> {
-    // Implementation
-    // return { data: [], total: 0 };
+  static async getList(params: Partial<User>): Promise<{ data: User[]; total: number }> {
+    console.log('Fetching user list with params:', params);
     return {
       data: [
         { id: 1, name: 'John Doe', age: 30, createdAt: '2023-01-01', status: 'active', isAdmin: true },
@@ -32,18 +31,18 @@ class UserService {
     };
   }
 
-  async create(data: Partial<User>) {
-    // Implementation
+  static async create(data: Partial<User>) {
+    console.log('Creating user:', data);
     return data as User;
   }
 
-  async update(id: number, data: Partial<User>) {
-    // Implementation
+  static async update(id: number, data: Partial<User>) {
+    console.log(`Updating user with id ${id}:`, data);
     return { id, ...data } as User;
   }
 
-  async delete(id: number) {
-    // Implementation
+  static async delete(id: number) {
+    console.log(`Deleting user with id ${id}`);
   }
 }
 
