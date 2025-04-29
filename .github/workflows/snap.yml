@@ -15,7 +15,7 @@ jobs:
         run: npm i -g pnpm
 
       - name: 'Installing deps'
-        run: pnpm i && npm i -g serve
+        run: pnpm i && npm i -g serve && npx --yes puppeteer browsers install chrome
 
       - name: 'Build Prodcution'
         run: pnpm build
