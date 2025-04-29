@@ -2636,10 +2636,10 @@ ansi-styles@^5.0.0:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-5.2.0.tgz#07449690ad45777d1924ac2abb2fc8895dba836b"
   integrity sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==
 
-antd-crud-table@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/antd-crud-table/-/antd-crud-table-0.0.9.tgz#581bd97c8e2d8a0dc710d7d3d24c52af72783d04"
-  integrity sha512-hm4buHja0dzVGvlVsJ9tHj2ggA/3mW955s1Wcq1TKxy41pNbqGN2sSGy9+HD3u0HxhJ73zWMkHlBPzkO9Y+sPA==
+antd-crud-table@^0.0.10:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/antd-crud-table/-/antd-crud-table-0.0.10.tgz#c46c7dc5e2c2f8c1501dd7fe9438b8d2ed8438ee"
+  integrity sha512-D/EnhKHXSG4cb907i5SN+EuNY+Dgpe69hUZ49T3/iWtZVgKB9FBCwuvg7yLQMD2fRrUJBWFiUFjOE/ODQPeC4Q==
   dependencies:
     "@ant-design/icons" "^6.0.0"
     "@ant-design/pro-components" "^2.8.7"
