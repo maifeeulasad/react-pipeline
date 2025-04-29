@@ -1,15 +1,13 @@
 import React from 'react';
 
-import styles from './Landing.module.scss';
-
-import logo from './landing.svg';
 // @ts-ignore
 import CrudTable from 'antd-crud-table';
 // @ts-ignore
 import { usePersistentState } from 'persistent-state-react';
 // @ts-ignore
 import { useFetch } from 'network-react';
-
+import logo from './landing.svg';
+import styles from './Landing.module.scss';
 
 // Example usage
 interface User {
@@ -31,7 +29,7 @@ class UserService {
         { id: 2, name: 'Jane Smith', age: 25, createdAt: '2023-02-01', status: 'inactive', isAdmin: false },
       ],
       total: 2,
-    }
+    };
   }
 
   async create(data: Partial<User>) {
@@ -50,7 +48,6 @@ class UserService {
 }
 
 const UserTable = () => {
-
   const [count1, setCount] = usePersistentState<number>('global/counter', 0);
 
   const [count2] = usePersistentState('global/counter', 0);
@@ -154,7 +151,6 @@ const UserTable = () => {
         ]}
       />
     </div>
-
 
   );
 };
