@@ -22,13 +22,23 @@ interface User {
 class UserService {
   static async getList(params: Partial<User>): Promise<{ data: User[]; total: number }> {
     console.log('Fetching user list with params:', params);
-    return {
-      data: [
-        { id: 1, name: 'John Doe', age: 30, createdAt: '2023-01-01', status: 'active', isAdmin: true },
-        { id: 2, name: 'Jane Smith', age: 25, createdAt: '2023-02-01', status: 'inactive', isAdmin: false },
-      ],
-      total: 2,
-    };
+    // please call this api: https://jsonplaceholder.typicode.com/posts/
+    // and return the data in the format of { data: User[], total: number }
+
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
+    const data = await response.json();
+    const total = data.length;
+    console.log('Fetched user list:', data);
+    console.log('Total users:', total);
+    return {data, total};
+
+    // return {
+    //   data: [
+    //     { id: 1, name: 'John Doe', age: 30, createdAt: '2023-01-01', status: 'active', isAdmin: true },
+    //     { id: 2, name: 'Jane Smith', age: 25, createdAt: '2023-02-01', status: 'inactive', isAdmin: false },
+    //   ],
+    //   total: 2,
+    // };
   }
 
   static async create(data: Partial<User>) {
@@ -113,40 +123,40 @@ const UserTable = () => {
         service={UserService}
         columns={[
           {
-            dataIndex: 'name',
-            title: 'Name',
-            fieldType: 'string',
+            dataIndex: 'id',
+            title: 'ID',
+            fieldType: 'number',
             formConfig: { required: true },
           },
           {
-            dataIndex: 'age',
-            title: 'Age',
+            dataIndex: 'body',
+            title: 'Body',
+            fieldType: 'string',
+          },
+          {
+            dataIndex: 'title',
+            title: 'Title',
+            fieldType: 'string',
+          },
+          {
+            dataIndex: 'userId',
+            title: 'User ID',
             fieldType: 'number',
           },
-          {
-            dataIndex: 'age2',
-            title: 'Age2',
-            fieldType: 'number',
-          },
-          {
-            dataIndex: 'createdAt',
-            title: 'Created At',
-            fieldType: 'date',
-          },
-          {
-            dataIndex: 'status',
-            title: 'Status',
-            fieldType: 'enum',
-            enumOptions: {
-              active: { text: 'Active' },
-              inactive: { text: 'Inactive' },
-            },
-          },
-          {
-            dataIndex: 'isAdmin',
-            title: 'Administrator',
-            fieldType: 'boolean',
-          },
+          // {
+          //   dataIndex: 'status',
+          //   title: 'Status',
+          //   fieldType: 'enum',
+          //   enumOptions: {
+          //     active: { text: 'Active' },
+          //     inactive: { text: 'Inactive' },
+          //   },
+          // },
+          // {
+          //   dataIndex: 'isAdmin',
+          //   title: 'Administrator',
+          //   fieldType: 'boolean',
+          // },
         ]}
       />
     </div>
