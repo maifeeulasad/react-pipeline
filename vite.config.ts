@@ -33,7 +33,45 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
+      // todo: we need try to load from file later on
       registerType: 'autoUpdate',
+      includeAssets: ['favicon.ico', 'logo144.png', 'logo192.png', 'logo512.png'],
+      manifest: {
+        name: 'React Pipeline from Maifee Ul Asad',
+        short_name: 'React Pipeline',
+        description: 'SPA using React + TS + Vite + Tailwind',
+        theme_color: '#000000',
+        background_color: '#ffffff',
+        display: 'standalone',
+        start_url: './',
+        scope: './',
+        icons: [
+          {
+            src: 'favicon.ico',
+            sizes: '64x64 32x32 24x24 16x16',
+            type: 'image/x-icon',
+            purpose: 'any'
+          },
+          {
+            src: 'logo144.png',
+            type: 'image/png',
+            sizes: '144x144',
+            purpose: 'any'
+          },
+          {
+            src: 'logo192.png',
+            type: 'image/png',
+            sizes: '192x192',
+            purpose: 'any maskable'
+          },
+          {
+            src: 'logo512.png',
+            type: 'image/png',
+            sizes: '512x512',
+            purpose: 'any maskable'
+          }
+        ]
+      },
       workbox: {
         globPatterns: ['**/*.{html,js,css,png,jpg,svg,ico,json,woff2,ttf,mp4}'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB limit
