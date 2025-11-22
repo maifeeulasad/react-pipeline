@@ -24,8 +24,8 @@ jobs:
       run: npm i -g pnpm  
     - name: 'Installing deps'    
       run: pnpm i
-#    - name: 'Test'
-#      run: pnpm test
+    - name: 'Predeploy'
+      run: pnpm predeploy
     - name: 'Build'
       run: pnpm build #--if-present
     - name: 'Deploy'
