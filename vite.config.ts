@@ -112,7 +112,7 @@ export default defineConfig({
     VitePluginRadar({
       enableDev: true,
       analytics: {
-        id: 'G-366693052',
+        id: 'G-3G1RNC5YLT',
         // UA-136427840-2 // <--- old one, keeping here, for documentation purpose;
       },
     }),
