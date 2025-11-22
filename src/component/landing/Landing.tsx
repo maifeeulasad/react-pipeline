@@ -34,8 +34,22 @@ class UserService {
 
     // return {
     //   data: [
-    //     { id: 1, name: 'John Doe', age: 30, createdAt: '2023-01-01', status: 'active', isAdmin: true },
-    //     { id: 2, name: 'Jane Smith', age: 25, createdAt: '2023-02-01', status: 'inactive', isAdmin: false },
+    //     {
+    //       id: 1,
+    //       name: 'John Doe',
+    //       age: 30,
+    //       createdAt: '2023-01-01',
+    //       status: 'active',
+    //       isAdmin: true
+    //     },
+    //     {
+    //       id: 2,
+    //       name: 'Jane Smith',
+    //       age: 25,
+    //       createdAt: '2023-02-01',
+    //       status: 'inactive',
+    //       isAdmin: false
+    //     },
     //   ],
     //   total: 2,
     // };
