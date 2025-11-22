@@ -30,7 +30,7 @@ class UserService {
     const total = data.length;
     console.log('Fetched user list:', data);
     console.log('Total users:', total);
-    return {data, total};
+    return { data, total };
 
     // return {
     //   data: [
