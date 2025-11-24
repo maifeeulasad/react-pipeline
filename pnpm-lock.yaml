@@ -65,6 +65,9 @@ importers:
       react-i18next:
         specifier: ^15.5.1
         version: 15.5.1(i18next@24.2.3(typescript@5.8.3))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.8.3)
+      react-mua-error:
+        specifier: ^3.0.1
+        version: 3.0.1(react@18.3.1)
       react-mua-login:
         specifier: ^2.1.3
         version: 2.1.3(react@18.3.1)
@@ -3827,6 +3830,12 @@ packages:
 
   react-lifecycles-compat@3.0.4:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
+
+  react-mua-error@3.0.1:
+    resolution: {integrity: sha512-xkbsIJX1tp0g4hIMH7LsxjciQ4jIGtz4katgap77rbf/0yqFp+xXyTOdBdo2YKZnBRkV2m5437oeWWoToAJRaA==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: ^16.0.0
 
   react-mua-login@2.1.3:
     resolution: {integrity: sha512-CLlGzMwrsdb7iVBMbBB3wdABnUrVkRrTzKRFB60rNJSVQIaH+KPBrUGQ9HRLp85cNqu+st7gHT7TlHgmyMzYDA==}
@@ -8927,6 +8936,10 @@ snapshots:
   react-is@18.3.1: {}
 
   react-lifecycles-compat@3.0.4: {}
+
+  react-mua-error@3.0.1(react@18.3.1):
+    dependencies:
+      react: 18.3.1
 
   react-mua-login@2.1.3(react@18.3.1):
     dependencies:
