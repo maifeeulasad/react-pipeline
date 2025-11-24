@@ -56,7 +56,7 @@ const CustomFooterMenu = ({ collapsed }: ICustomFooterMenuProps) => {
     copyText(TRACE);
     api.open({
       key: TRACE,
-      message: 'Trace ID copied to clipboard',
+      title: 'Trace ID copied to clipboard',
       description: `ID: ${TRACE}`,
       duration: 2,
       closeIcon: <div />,
