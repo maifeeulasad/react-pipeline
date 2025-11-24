@@ -47,6 +47,9 @@ importers:
       i18next-browser-languagedetector:
         specifier: ^8.0.5
         version: 8.0.5
+      idb-ts:
+        specifier: ^3.9.0
+        version: 3.9.0(reflect-metadata@0.2.2)(tslib@2.8.1)
       network-react:
         specifier: ^1.2.0
         version: 1.2.0(@types/react@18.3.20)(react@18.3.1)
@@ -2811,6 +2814,12 @@ packages:
       typescript:
         optional: true
 
+  idb-ts@3.9.0:
+    resolution: {integrity: sha512-4z5mc4zlBtN4S63M1pKzsR4aFTOQeGUW+viW0ec1w3YqwjZKGc1qArWhYsnyJtxu352p9s5CFu05iVqGH1oowA==}
+    peerDependencies:
+      reflect-metadata: ^0.2.2
+      tslib: ^2.8.1
+
   idb@7.1.1:
     resolution: {integrity: sha512-gchesWBzyvGHRO9W8tzUWFDycow5gwjvFKfyV9FF32Y7F50yZMp7mP+T2mJIWFx49zicqyC4uefHM17o6xKIVQ==}
 
@@ -3959,6 +3968,9 @@ packages:
   redent@3.0.0:
     resolution: {integrity: sha512-6tDA8g98We0zd0GvVeMT9arEOnTw9qM03L9cJXaCjrip1OO764RDBLBfrB4cwzNGDj5OA5ioymC9GkizgWJDUg==}
     engines: {node: '>=8'}
+
+  reflect-metadata@0.2.2:
+    resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
 
   reflect.getprototypeof@1.0.10:
     resolution: {integrity: sha512-00o4I+DVrefhv+nX0ulyi3biSHCPDe+yLv5o/p6d/UVlirijB8E16FtfwSAi4g3tcqrQ4lRAqQSoFEZJehYEcw==}
@@ -7955,6 +7967,11 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.3
 
+  idb-ts@3.9.0(reflect-metadata@0.2.2)(tslib@2.8.1):
+    dependencies:
+      reflect-metadata: 0.2.2
+      tslib: 2.8.1
+
   idb@7.1.1: {}
 
   ieee754@1.2.1: {}
@@ -9169,6 +9186,8 @@ snapshots:
     dependencies:
       indent-string: 4.0.0
       strip-indent: 3.0.0
+
+  reflect-metadata@0.2.2: {}
 
   reflect.getprototypeof@1.0.10:
     dependencies:
