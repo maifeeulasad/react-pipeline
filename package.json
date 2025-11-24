@@ -12,7 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@vitejs/plugin-react-swc": "^3.9.0",
     "animatus-svg": "^0.2.0",
-    "antd": "^5.24.9",
+    "antd": "^6.0.0",
     "antd-crud-table": "^0.0.10",
     "copy-clipboard-js": "^2.1.1",
     "flux-node": "^0.1.0",
