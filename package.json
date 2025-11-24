@@ -34,6 +34,7 @@
     "rollup-plugin-visualizer": "^5.14.0",
     "to-spreadsheet": "^1.3.0",
     "unified-db": "^0.0.2",
+    "vaji": "^0.0.2",
     "vite": "^6.3.3",
     "vite-plugin-radar": "^0.9.6",
     "vite-plugin-svgr": "^2.4.0",
