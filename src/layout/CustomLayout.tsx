@@ -5,7 +5,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { notification, Input, Select, Form, Button, Affix } from 'antd';
 import { copyText } from 'copy-clipboard-js';
 import CopyOutlined from '@ant-design/icons/CopyOutlined';
-import { ReloadOutlined, SearchOutlined } from '@ant-design/icons';
+import { ReloadOutlined, SearchOutlined, MoonOutlined, SunOutlined } from '@ant-design/icons';
 import logo from './logo.svg';
 
 const defaultMenus: MenuDataItem[] = [
@@ -169,9 +169,11 @@ const subMenuItemRender = (item: any, dom: React.ReactNode) => <Link to={item.pa
 
 interface ICustomLayoutProps {
   children: ReactNode;
+  isDark: boolean;
+  toggleTheme: () => void;
 }
 
-const CustomLayout = ({ children }: ICustomLayoutProps) => {
+const CustomLayout = ({ children, isDark, toggleTheme }: ICustomLayoutProps) => {
   const location = useLocation();
 
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -203,6 +205,18 @@ const CustomLayout = ({ children }: ICustomLayoutProps) => {
       subMenuItemRender={subMenuItemRender}
       // eslint-disable-next-line
       menuFooterRender={(props) => <CustomFooterMenu {...props} />}
+      actionsRender={() => [
+        <span key="theme-text" style={{ fontSize: '14px', opacity: 0.85, marginRight: '8px' }}>
+          {isDark ? 'Dark Mode' : 'Light Mode'}
+        </span>,
+        <Button
+          key="theme-button"
+          type="text"
+          icon={isDark ? <SunOutlined /> : <MoonOutlined />}
+          onClick={toggleTheme}
+          title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+        />,
+      ]}
     >
       <PageContainer header={{ title: true }}>
         <Affix offsetTop={0}>
